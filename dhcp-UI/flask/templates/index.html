@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active DHCP Leases</title>
+</head>
+<body>
+<h1>Active DHCP Leases</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Hardware Address</th>
+        <th>IP Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for lease in active_leases %}
+    <tr>
+        <td>{{ lease[0] }}</td>
+        <td>{{ lease[1] }}</td>
+        <td>{{ lease[2] }}</td>
+        <td>{{ lease[3] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
